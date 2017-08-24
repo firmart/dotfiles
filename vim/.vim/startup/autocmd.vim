@@ -1,7 +1,7 @@
 " Vimscript file settings {{{
 aug filetype_vim
     autocmd!
-    autocmd FileType vim setlocalocal foldmethod=marker
+    autocmd FileType vim setloca foldmethod=marker
 aug END
 " }}}
 

@@ -33,6 +33,8 @@ inoremap jk <esc>
 " Disable escape and arrows keys in insert mode
 inoremap <esc> <nop>
 nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+
+" Arrow keys mappings {{{
 " Map arrow keys in the use of windows navigation in normal mode
 nnoremap <Up>    <C-w><up>
 nnoremap <Down>  <C-w><down>
@@ -55,3 +57,4 @@ else
     inoremap <Left>  <Esc><C-W><Left>i
     inoremap <Right> <Esc><C-W><Right>i
 endif
+" }}}

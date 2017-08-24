@@ -1,6 +1,4 @@
-
-" =================== My own functions ==================
-
+" WikiMathToLatex / (convert unicode symbols to LaTeX) {{{
 function! WikiMathToLatex()
     silent! %s/\([\u4e00-\u9fff]\) \(.\{-}\) \([\u4e00-\u9fff]\)/\1\2\3/g
     silent! %s/{{math|\(.\{-}\)}}/<math>\1<\/math>/g
@@ -55,13 +53,16 @@ function! WikiMathToLatex()
     silent! %s/\([\u4e00-\u9fff]\|，\|、\|。\|；\|：\|:\|\*\|\]\)\([0-9a-zA-Z]\|{\)\(.*\)\([0-9a-zA-Z]\|}\|)\)\([\u4e00-\u9fff]\|，\|、\|。\|：\|\[\)/\1<math>\2\3\4<\/math>\5/g
     silent! %s/\([\u4e00-\u9fff]\)(\(.\{-}\))\([\u4e00-\u9fff]\)/\1（\2）\3/g
 endfunction
+" }}}
 
+" LaTeXFormat / (make LaTeX code less buggy) {{{
 function! LatexFormat()
     silent! %s/\$\$\(.\{-}\)\$\$/\\[\1\\]/g
     silent! %s/{ \{-}\\itshape\(.\{-}\)}/\\textit{\1}/g
     silent! %s/{ \{-}\\bfseries\(.\{-}\)}/\\textbf{\1}/g
     silent! %s/{ \{-}\\scshape\(.\{-}\)}/\\textsc{\1}/g
 endfunction
+" }}}
 
 function! Item2DescItem()
     silent ! %s/\\item\[\(\([A-Z]\|[0-9]\|-\|\.\)\{-}\)\]/\\descitem{\1}/g
