@@ -17,7 +17,7 @@ nnoremap P :put!<cr>
 nnoremap <c-q> ZZ
 inoremap <c-q> <esc>ZZ
 " 'E'dit 'v'imrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :vsplit $HOME/dotfiles/vim/<cr>
 " 'S'ource 'v'imrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " Wrap the current word with quotes
