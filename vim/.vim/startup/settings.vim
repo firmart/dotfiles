@@ -1,6 +1,6 @@
-" do incremental searching
+" Do incremental searching
 set incsearch       
-" allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 set ruler   
 " Set indentation '<' '>' equals to 4 spaces
@@ -20,12 +20,21 @@ set showmatch
 set matchtime=1
 " Always display status bar
 set laststatus=2
-" keep a backup file (restore to previous version)
+" Keep a backup file (restore to previous version)
 set backup
-" set backupdir
+" Set backupdir
 set backupdir=$HOME/.vim/backup
-" keep an undo file (undo changes after closing)
+" Keep an undo file (undo changes after closing)
 set undofile
-" set undodir
+" Set undodir
 set undodir=$HOME/.vim/undo
-
+" Search down into subfolders
+set path+=**
+" Display all matching files when we tab complete
+set wildmenu
+" Set zsh in interactive mode
+" set shell=zsh\ -i
+" Keep the cursor centered
+set scrolloff=9999 
+" Display a column indicating fold
+set foldcolumn=1 
