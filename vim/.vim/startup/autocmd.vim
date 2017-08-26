@@ -48,3 +48,15 @@ augroup spell_checker
     autocmd FileType vimwiki,tex,latex,md,txt inoremap <buffer> <C-K> <Esc>[sve<C-G>
     autocmd FileType vimwiki,tex,latex,md,txt snoremap <buffer> <C-K> <Esc>b[sviw<C-G>           
 augroup END
+
+" Last position settings {{{1
+augroup last_position
+    au!
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+    au BufReadPost *
+            \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+            \   exe "normal! g`\"" |
+            \ endif
+augroup END

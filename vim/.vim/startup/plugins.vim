@@ -1,4 +1,4 @@
-" Vim airline {{{ 
+" Plugin: vim airline {{{1
 
 let g:airline_theme="wombat" 
 let g:airline_powerline_fonts = 1
@@ -9,9 +9,8 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 " 关闭状态显示空白符号计数,这个对我用处不大"
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
-" }}}
 
-" nerd tree {{{ 
+" Plugin: Nerd tree {{{1
 
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nnoremap <Leader>fl :NERDTreeToggle<CR>
@@ -25,15 +24,14 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
-" }}}
 
-" vimwiki {{{ 
+" Plugin: vimwiki {{{1
 " maxhi show link without file
 let g:vimwiki_list = [{
 \ 'path': '~/vimwiki',
 \ 'maxhi': 1, 'auto_toc': 1,
-\ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'}
+\ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
+\ 'auto_tags': 1
 \ }]
 
 let g:vimwiki_CJK_length = 1
-" }}}

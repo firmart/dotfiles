@@ -7,6 +7,8 @@ set ruler
 set shiftwidth=4
 set expandtab
 set tabstop=4
+" always set autoindenting on
+set autoindent 
 " Indent round shiftwidth 
 set shiftround
 set relativenumber
