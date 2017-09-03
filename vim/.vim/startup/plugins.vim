@@ -26,9 +26,14 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 
 " Plugin: vimwiki {{{1
-" maxhi show link without file
+" maxhi show link without file created
 let g:vimwiki_list = [{
 \ 'path': '~/vimwiki',
+\ 'maxhi': 1, 'auto_toc': 1,
+\ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
+\ 'auto_tags': 1
+\ }, { 
+\ 'path': '~/proj/git_proj/my_project/PAD/wiki',
 \ 'maxhi': 1, 'auto_toc': 1,
 \ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
 \ 'auto_tags': 1

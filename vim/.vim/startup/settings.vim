@@ -30,6 +30,8 @@ set backupdir=$HOME/.vim/backup
 set undofile
 " Set undodir
 set undodir=$HOME/.vim/undo
+" Search in vimwiki and its subfolders
+set path+=~/vimwiki/**
 " Search down into subfolders
 set path+=**
 " Display all matching files when we tab complete

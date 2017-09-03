@@ -57,20 +57,18 @@ ${execi 86400 lsb_release -si} : ${execi 86400 lsb_release -sr} ${execi 86400 ls
 $sysname : $kernel $machine
 
 ${color #f8df58}${font Conky Icons by Carelli:size=14}E${goto 85}${font}WLAN${goto 225}${font}ETH${color}
-${goto 50}${font Conky Icons by Carelli:size=14}Ƃ ${font}${goto 85}${upspeed wlo1}${goto 225}${upspeed enp2s0}
-${goto 50}${font Conky Icons by Carelli:size=14}Ɓ ${font}${goto 85}${downspeed wlo1}${goto 225}${downspeed enp2s0}
-${goto 50}${font Conky Icons by Carelli:size=14}h ${font}${goto 85}${addrs wlo1}${goto 225}${addrs enp2s0}
-${goto 50}${font Conky Icons by Carelli:size=14}Ǘ ${font}${goto 85}${wireless_essid wlo1} : ${wireless_link_qual wlo1}%
+${goto 50}${font Conky Icons by Carelli:size=14}Ƃ ${font}${goto 85}${upspeed wlp2s0}${goto 225}${upspeed enp3s0}
+${goto 50}${font Conky Icons by Carelli:size=14}Ɓ ${font}${goto 85}${downspeed wlp2s0}${goto 225}${downspeed enp3s0}
+${goto 50}${font Conky Icons by Carelli:size=14}h ${font}${goto 85}${addrs wlp2s0}${goto 225}${addrs enp3s0}
+${goto 50}${font Conky Icons by Carelli:size=14}Ǘ ${font}${goto 85}${wireless_essid wlp2s0} : ${wireless_link_qual wlp2s0}%
 ${color #f8df58}${font Conky Icons by Carelli:size=14}i ${font}${exec curl ipinfo.io/ip}${color}
 
 ${color #f8df58}${font Conky Icons by Carelli:size=14}ň ${font}DISCS${color}
-${goto 50}${font Conky Icons by Carelli:size=14}ǘ ${font}${goto 85}sdb5: ${hddtemp /dev/sdb5} ºC sdb: ${hddtemp /dev/sdb} ºC
+${goto 50}${font Conky Icons by Carelli:size=14}ǘ ${font}${goto 85}sda7: ${hddtemp /dev/sda7} ºC sdb: ${hddtemp /dev/sdb} ºC
 ${goto 50}${font Conky Icons by Carelli:size=14}Ǒ ${font}${goto 85}Root:${goto 140}${fs_bar 7,75 /}${goto 225}${fs_used_perc /}%
-${goto 50}${font Conky Icons by Carelli:size=14}M ${font}${goto 85}Data:${goto 140}${fs_bar 7,75 /home/}${goto 225}${fs_used_perc /home}%
-${goto 50}Read Root: ${diskio_read /dev/sdb5}${goto 225} Write Root: ${diskio_write /dev/sdb5}
-${goto 50}${diskiograph_read /dev/sdb5 20,80 2216e1 2216e1}${goto 225}${diskiograph_write /dev/sdb5 20,80 DD3A21 DD3A21}
-${goto 50}Read Home: ${diskio_read /dev/sda5}${goto 225} Write Home: ${diskio_write /dev/sda5}
-${goto 50}${diskiograph_read /dev/sda5 20,80 2216e1 2216e1}${goto 225}${diskiograph_write /dev/sda5 20,80 DD3A21 DD3A21}
+${goto 50}${font Conky Icons by Carelli:size=14}M ${font}${goto 85}AC233:${goto 140}${fs_bar 7,75 /mnt/HDD1}${goto 225}${fs_used_perc /mnt/HDD1/}%
+${goto 50}Read Root: ${diskio_read /dev/sda7}${goto 225} Write Root: ${diskio_write /dev/sda7}
+${goto 50}${diskiograph_read /dev/sda7 20,80 2216e1 2216e1}${goto 225}${diskiograph_write /dev/sda7 20,80 DD3A21 DD3A21}
 
 ${color #f8df58}${font Conky Icons by Carelli:size=14}Ŵ ${font}CPU${voffset -5.5}${goto 225}${font Conky Icons by Carelli:size=14}B ${font}MEMORY${color}${font}
 ${goto 50}${cpu cpu0}%${goto 92}${color #ffc31e}${cpubar 7,80 cpu0}${color #ffffff} ${hwmon 1 temp 2}ºC${goto 225}RAM:${goto 268}$memperc%${goto 302}${membar 7,80}

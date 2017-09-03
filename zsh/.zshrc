@@ -95,7 +95,7 @@ export EDITOR='vim'
 #########           ZSH    ONLY            ###########
 
 # export TERM="screen-256color" 
-export DEFAULT_USER=firmin
+export DEFAULT_USER=firmart
 
 # Completion
 zstyle ':completion:*' list-prompt   ''
@@ -144,6 +144,14 @@ zle -N self-insert url-quote-magic
 # Path
 
 export PATH=$PATH:$HOME/.my-script/
+
+export MANPATH=/usr/local/texlive/texmf-dist/doc/man:$MANPATH
+export INFOPATH=/usr/local/texlive/texmf-dist/doc/info:$INFOPATH
+export PATH=/usr/local/texlive/bin/x86_64-linux:$PATH
+
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 
 # To alias sudo command
 alias sudo='sudo '
