@@ -33,7 +33,7 @@ set undodir=$HOME/.vim/undo
 " Search in vimwiki and its subfolders
 set path+=~/vimwiki/**
 " Search down into subfolders
-set path+=**
+" set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 " Set zsh in interactive mode
@@ -42,3 +42,12 @@ set wildmenu
 set scrolloff=9999 
 " Display a column indicating fold
 set foldcolumn=1 
+" Update status bar without delay while switching mode
+if !has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif

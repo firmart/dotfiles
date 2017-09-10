@@ -28,7 +28,9 @@ augroup filetype_vimwiki
     autocmd FileType vimwiki nnoremap <buffer> <localleader>* lbi*<esc>ea*<esc>
     " Highlight selected text 
     autocmd FileType vimwiki vnoremap <buffer> <localleader>` <esc>`>a`<esc>`<i`<esc>
-    autocmd FileType vimwiki nnoremap <buffer> <localleader>` lbi`<esc>ea`<esc>
+    autocmd FileType vimwiki nnoremap <buffer> <localleader>` lBi`<esc>Ea`<esc>
+    " Open an item in the next level
+    " autocmd FileType vimwiki nnoremap <buffer><localleader>on o<
     autocmd FileType vimwiki nnoremap <buffer> <localleader>g :<c-u>execute "normal!" . '/\v^\* \*[a-z\(\)\- ]+\*' . "\r:nohlsearch\r"<cr>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>G :<c-u>execute "normal!" . '?\v^\* \*[a-z\(\)\- ]+\*' . "\r:nohlsearch\r"<cr>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>t :<c-u>execute "normal!" . '/\v^\= [A-Z] \=$' . "\r:nohlsearch\r"<cr>

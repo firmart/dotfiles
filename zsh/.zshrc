@@ -53,7 +53,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract web-search zsh-syntax-highlighting zsh-autosuggestions copybuffer)
+plugins=(git fasd extract web-search zsh-syntax-highlighting zsh-autosuggestions copybuffer )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,8 +64,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-
+# bindkey v in normal mode to type long shell command in vim
 export EDITOR='vim'
+KEYTIMEOUT=1
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #    export EDITOR='vim'
@@ -87,8 +88,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
 
 ############### MY CUSTOM SETTINGS ###################
 
@@ -141,6 +140,7 @@ compdef _gnu_generic gdb
 autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
+xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 # Path
 
 export PATH=$PATH:$HOME/.my-script/

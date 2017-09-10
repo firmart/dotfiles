@@ -30,6 +30,9 @@ let NERDTreeAutoDeleteBuffer=1
 let g:vimwiki_list = [{
 \ 'path': '~/vimwiki',
 \ 'maxhi': 1, 'auto_toc': 1,
+\ 'template_path': '/home/firmart/.vim/bundle/vimwiki/autoload/vimwiki/template',
+\ 'template_default' : 'default',
+\ 'template_ext' : '.htm',
 \ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
 \ 'auto_tags': 1
 \ }, { 
