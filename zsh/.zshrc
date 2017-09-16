@@ -141,6 +141,7 @@ autoload -Uz url-quote-magic
 zle -N self-insert url-quote-magic
 
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+
 # Path
 
 export PATH=$PATH:$HOME/.my-script/

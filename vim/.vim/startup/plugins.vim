@@ -41,5 +41,30 @@ let g:vimwiki_list = [{
 \ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
 \ 'auto_tags': 1
 \ }]
-
+let g:vimwiki_table_mappings = 0
 let g:vimwiki_CJK_length = 1
+" SuperTab settings {{{1
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabRetainCompletionType=2
+" }}}
+" YouCompleteMe {{{1
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py' 
+"python解释器路径"
+let g:ycm_python_binary_path='/usr/bin/python3'
+"是否开启语义补全"
+let g:ycm_seed_identifiers_with_syntax=1
+"是否在注释中也开启补全"
+let g:ycm_complete_in_comments=1
+let g:ycm_collect_identifiers_from_comments_and_strings = 0
+"开始补全的字符数"
+let g:ycm_min_num_of_chars_for_completion=2
+"补全后自动关机预览窗口"
+let g:ycm_autoclose_preview_window_after_completion=1
+" 禁止缓存匹配项,每次都重新生成匹配项"
+let g:ycm_cache_omnifunc=0
+"字符串中也开启补全"
+let g:ycm_complete_in_strings = 1
+"离开插入模式后自动关闭预览窗口"
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+" }}}
+

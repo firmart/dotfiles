@@ -23,6 +23,7 @@ augroup END
 " Vim-wiki settings {{{1
 augroup filetype_vimwiki
     autocmd!
+    autocmd FileType vimwiki exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/tex")
     " Bold selected text
     autocmd FileType vimwiki vnoremap <buffer> <localleader>* <esc>`>a*<esc>`<i*<esc>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>* lbi*<esc>ea*<esc>
@@ -37,10 +38,24 @@ augroup filetype_vimwiki
     autocmd FileType vimwiki nnoremap <buffer> <localleader>T :<c-u>execute "normal!" . '?\v^\= [A-Z] \=$' . "\r:nohlsearch\r"<cr>
 augroup END
 
+" Python settings {{{1
+augroup filetype_python
+    autocmd!
+   "  autocmd BufNewFile,BufRead *.py set tabstop=4
+   "  \ set softtabstop=4
+   "  \ set shiftwidth=4
+   "  \ set textwidth=79
+   "  \ set expandtab
+   "  \ set autoindent
+   "  \ set fileformat=unix
+augroup END
+" }}}
 " Tex files settings {{{1
 augroup filetype_tex
   autocmd!
-  autocmd TextChanged,TextChangedI *.tex :w 
+  " autocmd TextChanged,TextChangedI *.tex :w 
+  autocmd FileType tex vnoremap <buffer> <localleader>$ <esc>`>a*<esc>`<i$<esc>
+  autocmd FileType vimwiki nnoremap <buffer> <localleader>$ lbi*<esc>ea$<esc>
 augroup END
 
 " Spell checker settings {{{1
