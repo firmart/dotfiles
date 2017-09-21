@@ -23,11 +23,14 @@ nnoremap <leader>ev :vsplit $HOME/dotfiles/vim/<cr>
 " 'S'ource 'v'imrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " 'E'dit 'e'nglish dictionary
-nnoremap <leader>ee :vsplit $HOME/vimwiki/biblio/langs/English/en-dict.wiki<cr>
+nnoremap <leader>een :vsplit $HOME/vimwiki/biblio/langs/English/en-dict.wiki<cr>
 " 'E'dit 'f'rench dictionary
 nnoremap <leader>efr :vsplit $HOME/vimwiki/biblio/langs/French.wiki<cr>
+nnoremap <leader>ema :vsplit $HOME/vimwiki/glossary/maths-glsr.wiki<cr>
+
 " }}}
 
+nnoremap <c-s> :w<CR>
 " Wrap the current word with quotes
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 " Wrap the current word with single quote

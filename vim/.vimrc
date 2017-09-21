@@ -14,14 +14,15 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'vim-latex/vim-latex'
 " Plugin 'ervandew/supertab'
+Plugin 'johngrib/vim-game-code-break'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-rfc'
 Plugin 'vim-scripts/rfc-syntax'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
+" Plugin 'vim-scripts/indentpython.vim'
+" Plugin 'scrooloose/syntastic'
 " 插件列表结束
 call vundle#end()            " required
 filetype plugin on

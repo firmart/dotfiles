@@ -54,8 +54,8 @@ augroup END
 augroup filetype_tex
   autocmd!
   " autocmd TextChanged,TextChangedI *.tex :w 
-  autocmd FileType tex vnoremap <buffer> <localleader>$ <esc>`>a*<esc>`<i$<esc>
-  autocmd FileType vimwiki nnoremap <buffer> <localleader>$ lbi*<esc>ea$<esc>
+  autocmd FileType tex,vimwiki vnoremap <buffer> <localleader>$ <esc>`>a$<esc>`<i$<esc>
+  autocmd FileType tex,vimwiki nnoremap <buffer> <localleader>$ lbi$<esc>ea$<esc>
 augroup END
 
 " Spell checker settings {{{1
