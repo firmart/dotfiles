@@ -22,12 +22,14 @@ inoremap <c-q> <esc>ZZ
 nnoremap <leader>ev :vsplit $HOME/dotfiles/vim/<cr>
 " 'S'ource 'v'imrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-" 'E'dit 'e'nglish dictionary
+" 'E'dit 'en'glish dictionary
 nnoremap <leader>een :vsplit $HOME/vimwiki/biblio/langs/English/en-dict.wiki<cr>
-" 'E'dit 'f'rench dictionary
-nnoremap <leader>efr :vsplit $HOME/vimwiki/biblio/langs/French.wiki<cr>
+" 'E'dit 'fr'ench dictionary
+nnoremap <leader>efr :vsplit $HOME/vimwiki/biblio/langs/French/fr-dict.wiki<cr>
+" 'E'dit 'la'tin dictionary
+nnoremap <leader>ela :vsplit $HOME/vimwiki/biblio/langs/Latin/la-dict.wiki<cr>
+" 'E'dit 'm'aths glossary
 nnoremap <leader>ema :vsplit $HOME/vimwiki/glossary/maths-glsr.wiki<cr>
-
 " }}}
 
 nnoremap <c-s> :w<CR>
