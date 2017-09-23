@@ -23,7 +23,8 @@ augroup END
 " Vim-wiki settings {{{1
 augroup filetype_vimwiki
     autocmd!
-    autocmd FileType vimwiki exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/tex")
+    " Bold dictionary entries
+    autocmd BufWrite [a-z][a-z]-dict.wiki silent! %s/\v^\* ([^*][-a-zA-Z ]*[A-Za-z^*]) :/* *\1* :/g
     " Bold selected text
     autocmd FileType vimwiki vnoremap <buffer> <localleader>* <esc>`>a*<esc>`<i*<esc>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>* lbi*<esc>ea*<esc>
@@ -81,3 +82,7 @@ augroup last_position
             \   exe "normal! g`\"" |
             \ endif
 augroup END
+" }}}
+" Completion settings {{{1
+    autocmd FileType vimwiki,tex exec("setlocal dictionary+=".$HOME."/.vim/dictionaries/tex")
+" }}}

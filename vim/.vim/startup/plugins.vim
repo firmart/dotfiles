@@ -41,13 +41,13 @@ let g:vimwiki_list = [{
 \ 'nested_syntaxes' : {'python' : 'python', 'c' : 'c', 'cpp' : 'cpp', 'java' : 'java'},
 \ 'auto_tags': 1
 \ }]
-let g:vimwiki_table_mappings = 0
+let g:vimwiki_table_mappings = 1
 let g:vimwiki_CJK_length = 1
-" SuperTab settings {{{1
+" Plugin:SuperTab settings {{{1
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabRetainCompletionType=2
 " }}}
-" YouCompleteMe {{{1
+" Plugin: YouCompleteMe {{{1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py' 
 "python解释器路径"
 let g:ycm_python_binary_path='/usr/bin/python3'
