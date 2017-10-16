@@ -12,10 +12,14 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-latex/vim-latex'
+" Plugin 'vim-latex/vim-latex'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'vim-scripts/DrawIt'
 " Plugin 'ervandew/supertab'
 Plugin 'johngrib/vim-game-code-break'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete'
 Plugin 'mhinz/vim-startify'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
@@ -28,8 +32,6 @@ call vundle#end()            " required
 filetype plugin on
 syntax on
 
-
-
 " set status line
 set laststatus=2
 " enable powerline-fonts
@@ -41,7 +43,6 @@ set guifont=Ubuntu\ Mono\ for\ Powerline\ 14
 set background=dark
 set t_Co=256
 colorscheme janah
-
 
 so $HOME/.vim/startup/plugins.vim
 so $HOME/.vim/startup/mappings.vim

@@ -2,7 +2,7 @@
 " set leader key to '\'
 let mapleader = "\\"
 " set local leader key to ';'
-let maplocalleader = ";"
+let maplocalleader = ","
 " }}}
 " move line upward or downward
 nnoremap <leader>- ddp
@@ -31,7 +31,6 @@ nnoremap <leader>ela :vsplit $HOME/vimwiki/biblio/langs/Latin/la-dict.wiki<cr>
 " 'E'dit 'm'aths glossary
 nnoremap <leader>ema :vsplit $HOME/vimwiki/glossary/maths-glsr.wiki<cr>
 " }}}
-
 nnoremap <c-s> :w<CR>
 " Wrap the current word with quotes
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -46,6 +45,7 @@ nnoremap <leader>` viw<esc>a`<esc>bi`<esc>lel
 " Disable escape and arrows keys in insert mode
 " inoremap <esc> <nop>
 nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+nnoremap <leader>y "+y
 " Location list mappings {{{1
 nnoremap <leader>ln :lnext<CR>
 nnoremap <leader>lp :lprevious<CR>

@@ -25,16 +25,25 @@ augroup filetype_vimwiki
     autocmd!
     " Bold dictionary entries
     autocmd BufWrite [a-z][a-z]-dict.wiki silent! %s/\v^\* ([^*][-a-zA-Z ]*[A-Za-z^*]) :/* *\1* :/g
+
     " Bold selected text
     autocmd FileType vimwiki vnoremap <buffer> <localleader>* <esc>`>a*<esc>`<i*<esc>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>* lbi*<esc>ea*<esc>
+    " Enclose selected text by '$'
+    autocmd FileType vimwiki vnoremap <buffer> <localleader>$ <esc>`>a$<esc>`<i$<esc>
+    autocmd FileType vimwiki nnoremap <buffer> <localleader>$ lbi$<esc>ea$<esc>
+    " Enclose selected vimwikit by '_'
+    autocmd FileType vimwiki vnoremap <buffer> <localleader>_ <esc>`>a_<esc>`<i_<esc>
+    autocmd FileType vimwiki nnoremap <buffer> <localleader>_ lbi_<esc>ea_<esc>
     " Highlight selected text 
     autocmd FileType vimwiki vnoremap <buffer> <localleader>` <esc>`>a`<esc>`<i`<esc>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>` lBi`<esc>Ea`<esc>
-    " Open an item in the next level
+    " Open an item in the next level <bug>
     " autocmd FileType vimwiki nnoremap <buffer><localleader>on o<
+    " go forward/backward in entries
     autocmd FileType vimwiki nnoremap <buffer> <localleader>g :<c-u>execute "normal!" . '/\v^\* \*[a-z\(\)\- ]+\*' . "\r:nohlsearch\r"<cr>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>G :<c-u>execute "normal!" . '?\v^\* \*[a-z\(\)\- ]+\*' . "\r:nohlsearch\r"<cr>
+    " go forward/backward in section
     autocmd FileType vimwiki nnoremap <buffer> <localleader>t :<c-u>execute "normal!" . '/\v^\= [A-Z] \=$' . "\r:nohlsearch\r"<cr>
     autocmd FileType vimwiki nnoremap <buffer> <localleader>T :<c-u>execute "normal!" . '?\v^\= [A-Z] \=$' . "\r:nohlsearch\r"<cr>
 augroup END
@@ -55,8 +64,8 @@ augroup END
 augroup filetype_tex
   autocmd!
   " autocmd TextChanged,TextChangedI *.tex :w 
-  autocmd FileType tex,vimwiki vnoremap <buffer> <localleader>$ <esc>`>a$<esc>`<i$<esc>
-  autocmd FileType tex,vimwiki nnoremap <buffer> <localleader>$ lbi$<esc>ea$<esc>
+  autocmd FileType tex vnoremap <buffer> <localleader>$ <esc>`>a$<esc>`<i$<esc>
+  autocmd FileType tex nnoremap <buffer> <localleader>$ lbi$<esc>ea$<esc>
 augroup END
 
 " Spell checker settings {{{1

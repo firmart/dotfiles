@@ -23,7 +23,6 @@ conky.config = {
     maximum_width = 600,
 	minimum_width = 370,
 	minimum_height = 0,
-    alignement = 'middle_left',
 	border_inner_margin = 25,
 	border_outer_margin = 0 ,
 	gap_x = 50,
@@ -50,9 +49,6 @@ conky.config = {
 };
 
 conky.text= [[
-${color green}Vi ${color}Stack${color blue}Exchange ${color green}${hr 2}$color
-${execi 300 /home/firmart/.my-script/conky/conky-rss_vim.sh}
-
 ${color blue}G${color red}o${color yellow}o${color blue}g${color green}l${color red}e${color} News FR ${color blue}${hr 2}$color
 ${execi 300 /home/firmart/.my-script/conky/conky-rss_news-fr.sh}
 

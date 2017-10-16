@@ -53,7 +53,7 @@ HIST_STAMPS="mm/dd/yyyy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fasd extract web-search zsh-syntax-highlighting zsh-autosuggestions copybuffer )
+plugins=(git extract web-search zsh-syntax-highlighting zsh-autosuggestions thefuck copybuffer )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -66,6 +66,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # bindkey v in normal mode to type long shell command in vim
 export EDITOR='vim'
+export VISUAL='vim'
 KEYTIMEOUT=1
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -107,7 +108,7 @@ setopt hash_list_all            # hash everything before completion
 setopt completealiases          # complete alisases
 setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word    
 setopt complete_in_word         # allow completion from within a word/phrase
-setopt correct                  # spelling correction for commands
+#setopt correct                  # spelling correction for commands
 setopt list_ambiguous           # complete as much of a completion until it gets ambiguous.
 
 zstyle ':completion::complete:*' use-cache on               # completion caching, use rehash to clear
@@ -154,12 +155,19 @@ export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
+# xdg-open use terminal application
+export XDG_CURRENT_DESKTOP=X-Generic
+
 # To alias sudo command
 alias sudo='sudo '
-# Let mv verbose
 alias mv='mv -v '
 alias rm='rm -v '
+alias vi='vim'
+
+#################################################################################
 # mv files to Trash instead of rm them, it is compatible with the native eleOS FM.
+# Warning: it seam that it's only compatible with zsh wich treat filename space
+################################################################################$
 
 rmtrash(){
 	for file in "$@"
@@ -169,8 +177,8 @@ rmtrash(){
 	done
 }
 
-#alias rm="rmtrash"
-
+alias rm="rmtrash"
+alias za="zathura"
 #######                Dict                    #######
 
 dictl(){
@@ -202,4 +210,36 @@ vwg(){
 # Search line which match pattern following URL
 vwl(){
     vim -c VimwikiIndex -c "VWS $1.*http.*\c" -c lopen;
+}
+
+
+op(){
+    IFS=$'\n';
+    for file in `find ~ -type f | peco --initial-filter IgnoreCase`;
+    do xdg-open $file&;
+    done
+}
+
+s(){
+    IFS=$'\n';
+    echo `find ~ -type f | peco --initial-filter IgnoreCase`
+}
+
+
+dir(){
+    IFS=$'\n';
+    echo `find ~ -type d | peco --initial-filter IgnoreCase`
+}
+
+to(){
+    IFS=$'\n';
+    X=$(echo `find ~ -type d | peco --initial-filter IgnoreCase`)
+    cd $X
+}
+
+all(){
+    IFS=$'\n';
+    for file in `locate /* | peco --initial-filter IgnoreCase`;
+    do xdg-open $file;
+    done
 }

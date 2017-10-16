@@ -1,14 +1,14 @@
-URI='https://news.google.com/news/rss/?ned=fr&hl=fr'
-LINES=5 
+URI='https://vi.stackexchange.com/feeds'
+LINES=5
 
 EXEC="/usr/bin/curl -s" 
 
-$EXEC $URI | xmllint --format - | grep title |\
+$EXEC $URI |xmllint --format -| grep "<title" |\
 sed -e :a -e 's/<[^>]*>//g;/</N' |\
 sed -e 's/[ \t]*//' |\
 sed -e 's/\(.*\)/· \1/' |\
 sed -e 's/\.//' |\
 sed -e 's/\"//' |\
 sed -e 's/\"//' |\
-head -n $(($LINES + 2)) |\
+head -n $(($LINES + 1)) |\
 tail -n $(($LINES))
